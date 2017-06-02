@@ -1,0 +1,64 @@
+<div>
+	<div align="center" style="padding: 10px">
+		<form name="userForm" data-ng-submit="getProviderList()">
+		<p style="color: red;font-weight: bold;">{{error}}</p>
+			<table class="search">
+				<tr>
+					<th>City</th>
+					<th>Location</th>
+					<th>Service Type</th>
+				</tr>
+				<tr>
+					<td><select data-ng-model="user.selectedCity"
+						data-ng-options="item.city for item in cities"
+						data-ng-change="getLocations()" class="form-control"
+						data-ng-required="true" id="city">
+							<option value="">--Select City--</option>
+					</select></td>
+
+					<td><select data-ng-model="user.selectedLocation"
+						data-ng-options="x.location for x in location"
+						class="form-control" data-ng-required="true" id="location">
+							<option value="">-- Choose Location --</option>
+					</select></td>
+
+					<td><select data-ng-model="user.selectedService"
+						data-ng-options="x.service for x in services" class="form-control"
+						data-ng-required="true" id="service">
+							<option value="">-- Choose Service --</option>
+					</select></td>
+
+					<td><input type="submit" data-ngClick="Submit" value="Search"/></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div align="center"
+		style="border: 1pt solid; margin-right: 25%; margin-left: 25%; margin-bottom: 10px;overflow: hidden;"
+		data-ng-repeat="x in provider">
+		<h2>{{x.providerName}}</h2>
+		<div style="float: left; width: 30%" align="center">
+			<img src="images/logo.png" align="middle">
+		</div>
+		<div style="float: right;width: 70%;">
+			<table>
+				<tr>
+					<td>Contact Person Name :</td>
+					<td>{{x.businessName}}</td>
+				</tr>
+				<tr>
+					<td>Address :</td>
+					<td>{{x.businessAddress}}</td>
+				</tr>
+				<tr>
+					<td>Email :</td>
+					<td>{{x.emailId}}</td>
+				</tr>
+				<tr>
+					<td>Contact Number :</td>
+					<td>{{x.mobileNumber}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

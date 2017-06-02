@@ -1,0 +1,43 @@
+
+<div align="center">
+	<h2 style="text-align: center; text-decoration: underline;">Login</h2>
+	<h4>{{error}}</h4>
+	<form name="loginForm" data-ng-submit="login()">
+		<div style="border: 1pt solid; width: 50%" align="center">
+			<table>
+				<tr>
+					<td align="left"><label>Email Id</label></td>
+					<td>
+						<div class="form-group">
+							<input type="email" name="emailId" class="form-control"
+								data-ng-model="user.emailId" required="required"
+								placeholder="Email Id">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Password</label></td>
+					<td>
+						<div class="form-group">
+							<input type="password" name="password" class="form-control"
+								data-ng-model="user.password" required="required"
+								placeholder="Password" maxlength="15">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>User Type</label></td>
+					<td><select data-ng-model="user.userType" class="form-control">
+							<option value="">Select</option>
+							<option value="serviceProvider">Service Provider</option>
+							<option value="admin">Admin</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-left:50%; margin-top:30px;"><input type="submit" data-ngClick="Submit"
+						value="Login"/></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>

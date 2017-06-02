@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Services</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$(function() {
+		$("#includedHeader").load("templates/header.html");
+		$("#includedFooter").load("templates/footer.html");
+		$('#defaultOpen').click();
+	});
+</script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body data-ng-app="myApp">
+	<div id="includedHeader"></div>
+	<div data-ng-view></div>
+	<div id="includedFooter" style="padding-top: 150px"></div>
+
+	<!-- Modules -->
+	<script src="js/app.js"></script>
+
+	<!-- Controllers -->
+	<script src="js/controllers/userController.js"></script>
+	<script src="js/controllers/searchController.js"></script>
+	<script src="js/controllers/loginController.js"></script>
+	<script src="js/controllers/providerController.js"></script>
+	<script src="js/controllers/adminController.js"></script>
+	<script src="js/controllers/feedbackController.js"></script>
+
+	<!-- Services -->
+	<script src="js/services/locationService.js"></script>
+	<script src="js/services/searchServices.js"></script>
+	<script src="js/services/userServices.js"></script>
+	<script src="js/services/providerService.js"></script>
+
+	<!-- Directives -->
+	<script src="js/directives/providerEditDirective.js"></script>
+	<script src="js/directives/providerViewDirective.js"></script>
+</body>
+</html>

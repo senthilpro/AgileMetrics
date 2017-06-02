@@ -1,0 +1,122 @@
+
+<div align="center">
+	<h2 style="text-align: center; text-decoration: underline;">Service
+		Provider Registration</h2>
+	<form name="registerForm" data-ng-submit="registerUser()">
+		<div style="border: 1pt solid; width: 50%" align="center">
+			<table>
+				<tr>
+					<td align="left"><label>Service Provider Name</label></td>
+					<td>
+						<div class="form-group">
+							<input type="text" name="providerName" class="form-control"
+								data-ng-model="user.providername"
+								placeholder="Service Provider Name" required="required">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Business Name</label></td>
+					<td>
+						<div class="form-group">
+							<input type="text" name="businessName" class="form-control"
+								data-ng-model="user.businessName" required="required"
+								placeholder="Business Name">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>City</label></td>
+					<td>
+						<div class="form-group">
+							<select name="city" class="form-control"
+								data-ng-model="user.selectedCity"
+								data-ng-options="item.city for item in cities"
+								data-ng-change="getLocations()" required="required">
+								<option value="">Select</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Location</label></td>
+					<td>
+						<div class="form-group">
+							<select name="location" class="form-control"
+								data-ng-model="user.selectedLocation"
+								data-ng-options="x.location for x in location"
+								required="required">
+								<option value="">Select</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Service</label></td>
+					<td class="service-dropdown">
+						<div class="form-group">
+							<select multiple name="services" class="form-control"
+								data-ng-model="user.selectedService"
+								data-ng-options="x.service for x in services"
+								required="required">
+								<option>{{x.service}}</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Mobile Number</label></td>
+					<td>
+						<div class="form-group">
+							<input type="text" name="mobileNumber" class="form-control"
+								data-ng-model="user.mobileNumber" required="required"
+								placeholder="Mobile Number" maxlength="10">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Email Id</label></td>
+					<td>
+						<div class="form-group">
+							<input type="email" name="emailId" class="form-control"
+								data-ng-model="user.emailId" required="required"
+								placeholder="Email Id">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Password</label></td>
+					<td>
+						<div class="form-group">
+							<input type="password" name="password" class="form-control"
+								data-ng-model="user.password" required="required"
+								placeholder="Password" maxlength="15" min="5">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Business Address</label></td>
+					<td>
+						<div class="form-group">
+							<textarea name="businessAddress" class="form-control"
+								data-ng-model="user.businessAddress" style="resize: none;"
+								required="required" placeholder="Address"></textarea>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Logo</label></td>
+					<td>
+						<div class="form-group">
+							<input type="file" name="userLogo" class="form-control"
+								data-ng-model="user.logo" accept="image/x-png,image/jpeg">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-left:50%; margin-top:30px;"><input type="submit" data-ngClick="Submit" value="Register"/></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>

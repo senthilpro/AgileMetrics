@@ -1,0 +1,126 @@
+<div>
+	<form name="providerEdit" data-ng-submit="updateUser()">
+		<div align="center"
+			style="border: 1pt solid; margin-right: 25%; margin-left: 25%; margin-bottom: 10px; overflow: hidden;"
+			data-ng-if='providers !== undefined'>
+			<h5>{{message}}</h5>
+			<table>
+				<tr>
+					<td align="left"><label>Service Provider Name</label></td>
+					<td>
+						<div class="form-group">
+							<input type="text" name="providerName" class="form-control"
+								data-ng-model="user.providername"
+								data-ng-value="providers.providerName" required="required">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Business Name</label></td>
+					<td>
+						<div class="form-group">
+							<input type="text" name="businessName" class="form-control"
+								data-ng-model="user.businessName" required="required"
+								data-ng-value="providers.businessName">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>City</label></td>
+					<td>
+						<div class="form-group">
+							<select name="city" class="form-control"
+								data-ng-model="$root.user.city"
+								data-ng-init="$root.user.city = cities[indexOfCity]"
+								data-ng-options="item.city for item in cities"
+								data-ng-change="getLocations()" required="required">
+								<option value="">Select</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Location</label></td>
+					<td>
+						<div class="form-group">
+							<select name="location" class="form-control"
+								data-ng-model="user.selectedLocation"
+								data-ng-init="user.selectedLocation=location[indexOfLocation].location"
+								data-ng-options="x.location for x in location"
+								required="required">
+								<option value="">Select</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Service</label></td>
+					<td class="service-dropdown">
+						<div class="form-group">
+							<select multiple name="services" class="form-control"
+								data-ng-model="user.selectedService"
+								data-ng-init="user.selectedService = intiServices"
+								data-ng-options="x.service for x in services"
+								required="required">
+								<option>{{x.service}}</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Mobile Number</label></td>
+					<td>
+						<div class="form-group">
+							<input type="text" name="mobileNumber" class="form-control"
+								data-ng-model="user.mobileNumber" required="required"
+								maxlength="10" data-ng-value="providers.mobileNumber">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Email Id</label></td>
+					<td style="border: none;">
+						<div class="form-group">
+							<input type="email" name="emailId" class="form-control"
+								data-ng-model="user.emailId" required="required"
+								disabled="disabled" data-ng-value="providers.emailId">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Password</label></td>
+					<td>
+						<div class="form-group">
+							<input type="password" name="passwordEdit" class="form-control"
+								data-ng-model="user.passwordEdit" required="required"
+								maxlength="15" min="5" data-ng-value="">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Business Address</label></td>
+					<td>
+						<div class="form-group">
+							<textarea name="businessAddress" class="form-control"
+								data-ng-model="$root.businessAddress" style="resize: none;"
+								data-ng-value="providers.businessAddress" required="required"></textarea>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Logo</label></td>
+					<td>
+						<div class="form-group">
+							<input type="file" name="userLogo" class="form-control"
+								data-ng-model="user.logo" accept="image/x-png,image/jpeg">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-left:50%; margin-top:30px;"><input type="submit"
+						data-ngClick="Submit" value="Update"/></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>

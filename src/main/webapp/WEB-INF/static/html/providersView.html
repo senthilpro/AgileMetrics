@@ -1,0 +1,44 @@
+<div data-ng-repeat="x in providers"
+	style="border: 1pt solid; margin-right: 15%; margin-left: 15%; margin-bottom: 10px; overflow: hidden;">
+	<div align="center" style="border: 1pt solid; margin: 5px; overflow: hidden; float: left; width: 75%">
+		<h2>{{x.providerName}}</h2>
+		<div style="float: left; width: 30%" align="center">
+			<img src="images/logo.png" align="middle">
+		</div>
+		<div style="float: left; width: 50%;">
+			<table style="width: 100%">
+				<tr>
+					<td class="displayLabel"><label>Contact Person Name :</label></td>
+					<td align="left">{{x.businessName}}</td>
+				</tr>
+				<tr>
+					<td class="displayLabel"><label>Address :</label></td>
+					<td align="left">{{x.businessAddress}}</td>
+				</tr>
+				<tr>
+					<td class="displayLabel"><label>Email :</label></td>
+					<td data-ng-model="providerEmail" align="left">{{x.emailId}}</td>
+				</tr>
+				<tr>
+					<td class="displayLabel"><label>Contact Number :</label></td>
+					<td align="left">{{x.mobileNumber}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div style="float: right; width: 20%; overflow: hidden; margin: 5px;">
+		<table>
+			<tr>
+				<td>
+					<button class="activate" data-ng-disabled="x.isActive == 'Y'"
+						data-ng-click="activateOrDeactivate(x.isActive, x.emailId)">Activate</button>
+				</td>
+			<tr>
+				<td>
+					<button class="activate" data-ng-disabled="x.isActive == 'N'"
+						data-ng-click="activateOrDeactivate(x.isActive, x.emailId)">Deactivate</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

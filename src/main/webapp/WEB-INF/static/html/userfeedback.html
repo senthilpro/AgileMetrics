@@ -1,0 +1,65 @@
+<div align="center">
+	<h2 style="text-align: center; text-decoration: underline;">Feedback</h2>
+	<form name="feedback" data-ng-submit="saveFeedBack()">
+		<div align="center"
+			style="border: 1pt solid; margin-right: 25%; margin-left: 25%; margin-bottom: 10px; overflow: hidden;">
+			<h5>{{message}}</h5>
+			<table>
+				<tr>
+					<td align="left"><label>Service Provider </label></td>
+					<td>
+						<div class="form-group">
+							<select name="provider" class="form-control"
+								data-ng-model="user.provider"
+								data-ng-options="item.providerName for item in providers"
+								required="required">
+								<option value="">Select</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Your Name</label></td>
+					<td>
+						<div class="form-group">
+							<input type="text" name="userName" class="form-control"
+								data-ng-model="user.userName" required="required" placeholder="Name">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Your Email</label></td>
+					<td>
+						<div class="form-group">
+							<input type="email" name="email" class="form-control"
+								data-ng-model="user.email" required="required" placeholder="Email Address">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Your Contact</label></td>
+					<td>
+						<div class="form-group">
+							<input type="text" name="contact" class="form-control"
+								data-ng-model="user.contact" required="required" maxlength="10" placeholder="Contact Number" >
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><label>Comments</label></td>
+					<td>
+						<div class="form-group">
+							<textarea name="feedback" class="form-control"
+								data-ng-model="user.feedback" style="resize: none;height: 100px;"
+								required="required" placeholder="Comments(Max 250 characters)"></textarea>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-left:50%; margin-top:30px;"><input type="submit"
+						data-ngClick="Submit" value="Submit" /></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>

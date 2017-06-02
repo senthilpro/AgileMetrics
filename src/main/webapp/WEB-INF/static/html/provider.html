@@ -1,0 +1,18 @@
+<div style="border: 1pt solid;">
+	<div class="tab">
+		<button class="tablinks" data-ng-click="tabName='tab1'"
+			id="defaultOpen">View</button>
+		<button class="tablinks" data-ng-click="tabName='tab2'">Edit</button>
+
+	</div>
+	<div>
+		<div data-ng-switch="tabName">
+			<div data-ng-switch-when="tab1">
+				<ng-include src="'html/providerView.html'"></ng-include>
+			</div>
+			<div data-ng-switch-when="tab2">
+				<ng-include src="'html/providerEdit.html'"></ng-include>
+			</div>
+		</div>
+	</div>
+</div>

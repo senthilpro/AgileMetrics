@@ -1,0 +1,37 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="homeController" class="com.pk.controller.HomeController">
+		<constructor-arg ref="homeService" />
+	</bean>
+
+	<bean id="userController" class="com.pk.controller.UserController">
+		<constructor-arg ref="userService" />
+	</bean>
+
+	<bean id="providerController" class="com.pk.controller.ProviderController">
+		<constructor-arg ref="providerService" />
+	</bean>
+
+	<bean id="homeService" class="com.pk.service.HomeService">
+		<constructor-arg ref="userServiceRepository" />
+	</bean>
+
+	<bean id="userService" class="com.pk.service.UserService">
+		<constructor-arg ref="userServiceRepository" />
+	</bean>
+	
+	<bean id="providerService" class="com.pk.service.ProviderService">
+		<constructor-arg ref="providerServiceRepository" />
+	</bean>
+
+	<bean id="userServiceRepository" class="com.pk.dao.UserServiceRepositoryImpl">
+		<constructor-arg ref="mysqlDatasource" />
+	</bean>
+	
+	<bean id="providerServiceRepository" class="com.pk.dao.ProviderServiceRepositoryImpl">
+		<constructor-arg ref="mysqlDatasource" />
+	</bean>
+</beans>
